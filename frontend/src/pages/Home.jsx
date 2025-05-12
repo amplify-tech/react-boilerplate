@@ -1,7 +1,8 @@
 import React from "react";
+import StudentList from "../components/StudentList";
 
 export default function Home() {
     return (
-        <h1> Home Page</h1>
+        <StudentList />
     );
 }
