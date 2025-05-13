@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import {getStudents} from "../services/studentService"
+import { Container, Typography, List, CircularProgress, ListItem, ListItemText } from "@mui/material"
 import "./StudentList.css";
 
 export default function StudentList() {
@@ -24,17 +25,29 @@ export default function StudentList() {
 
 	if(loading){
 		return (
-			<div>Loading...</div>
+			<Container>
+				<div className="LoaderContainer">
+					<CircularProgress />
+				</div>
+			</Container>
 		);
 	}
 
 	return (
-		<div>
-			<ul>
+		<Container className="studentContainer">
+			<Typography variant="h4">
+				Student List
+			</Typography>
+			<List>
 				{students.map((student) => (
-					<li key={student.id} className="studentBox" >{`${student.id} - ${student.name}`}</li>
+					<ListItem key={student.id}  divider>
+						<ListItemText 
+							primary={`${student.id} - ${student.name}`}
+							secondary={`Email: ${student.email}`}
+						/>
+					</ListItem>
 				))}
-			</ul>
-		</div>
+			</List>
+		</Container>
 	);
 };
