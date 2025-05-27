@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-    baseURL: "http://localhost:8000",
+    baseURL: "https://django-app-758990898782.asia-south2.run.app",
     headers: {
         "Content-Type": "application/json",
     },
