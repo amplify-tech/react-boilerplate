@@ -3,6 +3,7 @@
 
 # production build
 /build
+/dist
 
 # misc
 .DS_Store
@@ -21,3 +22,8 @@ pnpm-debug.log*
 # editor directories and files
 .vscode
 .idea
+
+.firebase/
+firebase.json
+.firebaserc
+firebase-debug.log
